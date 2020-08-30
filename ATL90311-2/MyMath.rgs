@@ -1,0 +1,26 @@
+HKCR
+{
+	ATL90311-2.MyMath.1 = s 'TCP LB3 MyMath class'
+	{
+		CLSID = s '{20909f3d-83c0-42ec-93d7-bdb2c650e51c}'
+	}
+	ATL90311-2.MyMath = s 'TCP LB3 MyMath class'
+	{		
+		CurVer = s 'ATL90311-2.MyMath.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {20909f3d-83c0-42ec-93d7-bdb2c650e51c} = s 'TCP LB3 MyMath class'
+		{
+			ProgID = s 'ATL90311-2.MyMath.1'
+			VersionIndependentProgID = s 'ATL90311-2.MyMath'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{27a829d0-963a-4618-af8e-b5b578c200ec}'
+			Version = s '1.0'
+		}
+	}
+}

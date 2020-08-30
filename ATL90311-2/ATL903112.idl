@@ -1,0 +1,40 @@
+﻿// ATL90311-2.idl: источник языка IDL для ATL90311-2
+//
+
+// Этот файл будет обработан средством MIDL для
+// создание библиотеки типов ($handlersafeidlname$.tlb) и кода маршалирования.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(bdde54e9-1afe-4ba9-86c9-5f3ab78830e2),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IMyMath : IDispatch
+{
+	[id(1), helpstring("Сложение")] 
+	HRESULT Add([in] LONG x, [in] LONG y, [out, retval] LONG* result);
+	[id(2), helpstring("Вычитание")] 
+	HRESULT Sub([in] LONG x, [in] LONG y, [out, retval] LONG* result);
+};
+[
+	uuid(27a829d0-963a-4618-af8e-b5b578c200ec),
+	version(1.0),
+]
+library ATL903112Lib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(20909f3d-83c0-42ec-93d7-bdb2c650e51c)
+	]
+	coclass MyMath
+	{
+		[default] interface IMyMath;
+	};
+};
+
+import "shobjidl.idl";
